@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [WatchComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class WatchModule { }
