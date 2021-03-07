@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
-    "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
+    "build": "ng build",
+    "scully": "scully",
+    "scully:serve": "scully serve",
+    "scully:ci": "scully -- --host='0.0.0.0' --scanRoutes --serverTimeout=60000",
+    "build:ci": "npm run build:prod && npm run scully:ci",
+    "build:prod": "NODE_ENV=production ng build --prod"
   },
   "private": true,
   "dependencies": {
