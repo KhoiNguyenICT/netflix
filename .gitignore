@@ -13,6 +13,7 @@ package-lock.json
 .scully
 /scully
 scully.log
+.firebase
 
 # profiling files
 chrome-profiler-events*.json
