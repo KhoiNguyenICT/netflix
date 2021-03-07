@@ -10,6 +10,9 @@
 # dependencies
 /node_modules
 package-lock.json
+.scully
+/scully
+scully.log
 
 # profiling files
 chrome-profiler-events*.json
