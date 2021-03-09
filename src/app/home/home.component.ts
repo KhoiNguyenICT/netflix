@@ -15,19 +15,33 @@ export class HomeComponent implements OnInit {
   @ViewChild("headerComponent", { read: ViewContainerRef })
   headerComponent: ViewContainerRef;
 
+  @ViewChild("footerComponent", { read: ViewContainerRef })
+  footerComponent: ViewContainerRef;
+
   constructor(private readonly factoryResolver: ComponentFactoryResolver) {}
 
   ngOnInit(): void {
     this.loadHeader();
+    this.loadFooter();
   }
 
   async loadHeader() {
     const { HeaderComponent } = await import(
-      "../_shared/components/header.component"
+      "../_shared/components/header-component/header.component"
     );
     const factory = this.factoryResolver.resolveComponentFactory(
       HeaderComponent
     );
     this.headerComponent.createComponent(factory);
+  }
+
+  async loadFooter() {
+    const { FooterComponent } = await import(
+      "../_shared/components/footer-component/footer.component"
+    );
+    const factory = this.factoryResolver.resolveComponentFactory(
+      FooterComponent
+    );
+    this.footerComponent.createComponent(factory);
   }
 }

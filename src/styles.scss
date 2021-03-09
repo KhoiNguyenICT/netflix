@@ -6,3 +6,41 @@
 body {
   background-color: #141414;
 }
+
+.film-item {
+  .film-info {
+    .short-note {
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+
+    .name-film {
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .item-position {
+    left: 1px;
+    right: 1px;
+  }
+
+  &:hover {
+    transform: scale3d(1.25);
+    transform: scale3d(1.25, 1.25, 1.25);
+
+    .film-info {
+      height: auto;
+      transform: scale3d(1);
+      padding: 0.5rem;
+    }
+
+    .item-position {
+      left: 0;
+      right: 0;
+    }
+  }
+}
