@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-watch',
   template: `
-  <div class="bg-nfl px-2">
-  <div class="flex flex-wrap-reverse h-screen items-end lg:items-center">
-    <div class="w-full lg:w-8/12 h-2/5 lg:h-3/4 lg:max-h-96">
+  <div class="bg-nfl">
+  <div class="flex flex-wrap-reverse h-screen items-end lg:items-center p-3">
+    <div class="w-full lg:w-8/12 h-2/5 lg:h-full lg:max-h-140">
       <iframe class="w-full h-full" src="https://www.youtube.com/embed/tgbNymZ7vqY">
       </iframe>
     </div>
-    <div class="w-full lg:w-4/12 h-2/5 lg:h-3/4 lg:max-h-96 text-sm text-white overflow-hidden relative bg-cover bg-center"
+    <div class="w-full lg:w-4/12 h-2/5 lg:h-full lg:max-h-140 text-sm text-white overflow-hidden relative bg-cover bg-center"
       style="background-image: url('https://occ-0-395-58.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABboKy7KMXcSOfoYThG9lOgDoxV_WvT_gzltHt9_SwjMhA3LuUQ0u5JF5B0u_1jyLRSs4mXPgac__7ylOb0EoZrnLN677.webp?r=363');">
 
       <div class="p-4 absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-end">
