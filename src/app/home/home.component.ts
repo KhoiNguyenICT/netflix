@@ -5,6 +5,8 @@ import {
   ViewChild,
   ViewContainerRef,
 } from "@angular/core";
+import { AngularFirestore } from "@angular/fire/firestore";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-home",
@@ -18,11 +20,17 @@ export class HomeComponent implements OnInit {
   @ViewChild("footerComponent", { read: ViewContainerRef })
   footerComponent: ViewContainerRef;
 
-  constructor(private readonly factoryResolver: ComponentFactoryResolver) {}
+  videos$: Observable<any[]>;
+
+  constructor(
+    private readonly factoryResolver: ComponentFactoryResolver,
+    private readonly firestoreService: AngularFirestore
+  ) {}
 
   ngOnInit(): void {
     this.loadHeader();
     this.loadFooter();
+    this.videos$ = this.firestoreService.collection("videos").valueChanges();
   }
 
   async loadHeader() {
