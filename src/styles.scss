@@ -3,26 +3,7 @@
 @import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  background-color: #141414;
-}
-
 .film-item {
-  .film-info {
-    .short-note {
-      -webkit-line-clamp: 3;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-    }
-
-    .name-film {
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 2;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-    }
-  }
-
   .item-position {
     left: 1px;
     right: 1px;
