@@ -1,7 +1,7 @@
 <ng-container #headerComponent></ng-container>
 
 <section class="bg-nfl pt-4">
-  <div class="container m-auto text-white max-w-full px-10">
+  <div class="container m-auto text-white max-w-full p-0 xl:px-10 w-11/12 md:w-10/12 xl:w-full">
     <div class="film-group netflix-film-group mb-8">
       <div class="film-group-title cursor-pointer mb-2">
         <span class="font-bold text-lg">Phim Netflix</span>
@@ -11,35 +11,27 @@
         </span>
       </div>
 
-      <div class="list-film w-full flex flex-nowrap -ml-1px -mr-1px pb-8">
+      <div class="list-film w-full flex flex-wrap xl:flex-nowrap -ml-1px -mr-1px pb-8">
         <div
-          class="group film-item z-10 hover:z-20 transition duration-200 ease-linear w-1/2 md:w-4/12 xl:w-16.667 min-w-16.667 h-40 md:h-72 xl:h-96 pl-1px pr-1px hover:scale-125 relative"
-          *ngFor="let video of videos$ | async"
-        >
+          class="group film-item z-10 hover:z-20 transition-all duration-300 ease-in-out w-1/2 md:w-4/12 xl:w-16.667 min-w-16.667 h-40 md:h-72 xl:h-96 hover:h-minContent pl-1px pr-1px hover:scale-125 relative mb-2 xl:mb-0"
+          *ngFor="let video of videos$ | async">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-40 md:h-72 xl:h-minContent group-hover:h-72 transition-all duration-300 ease-in-out top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
-                [src]="video.vertical_thumbnail"
-                [alt]="video.title"
-              />
+              <img class="w-full" [src]="video.vertical_thumbnail" [alt]="video.title" />
             </div>
             <div
-              class="film-info group-hover:h-auto hover:bg-nfl-bottom-info-play delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden absolute bottom-0 right-0 left-0"
-              style="background: linear-gradient(to top, #000000, #00000036)"
-            >
-              <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize mb-2 group-hover:scale-0"
-              >
-                <a
-                  class="overflow-hidden whitespace-nowrap overflow-ellipsis block"
-                  href="#"
-                  title=""
-                  rel=""
-                  >{{ video.title }}</a
-                >
+              class="film-info group-hover:h-auto hover:bg-nfl-bottom-info-play px-1 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden absolute bottom-0 right-0 left-0"
+              style="background: linear-gradient(to top, #000000, #00000036)">
+              <div class="name-film text-sm font-semibold capitalize mb-1 group-hover:scale-0">
+                <a class="overflow-hidden whitespace-nowrap overflow-ellipsis block" href="#" title=""
+                  rel="">{{ video.title }}</a>
+              </div>
+              <div class="flex justify-between items-center my-1">
+                <div class="button-play">
+                  <button class="shadow-md h-5 w-5 rounded-full bg-white p-0 flex items-center justify-center text-black cursor-pointer text-xs"><i class="fas fa-play"></i></button>
+                </div>
+                <div class="age-watch text-small-11 h-4 w-7 border border-white text-white flex justify-center items-center leading-3	">16+</div>
               </div>
               <div class="categiry-film text-small-11 group-hover:scale-0">
                 {{ video.name }}
@@ -69,29 +61,22 @@
 
       <div class="list-film w-full flex flex-wrap -ml-1px -mr-1px pb-8">
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="line text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="line text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -106,29 +91,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -143,29 +121,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -180,29 +151,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -217,29 +181,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -254,29 +211,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -291,29 +241,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -328,29 +271,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
@@ -365,29 +301,22 @@
           </div>
         </div>
         <div
-          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition duration-200 ease-linear h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8"
-        >
+          class="group film-item w-1/2 z-10 hover:z-20 md:w-4/12 xl:w-16.667 min-w-16.667 transition-all duration-300 ease-in-out h-24 md:h-40 xl:h-28 pl-1px pr-1px hover:scale-125 relative mb-4 md:mg-5 lg:mb-8">
           <div
-            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition duration-200 ease-linear h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden"
-          >
+            class="inline-block z-10 group-hover:z-20 absolute item-position group-hover:left-0 group-hover:right-0 h-minContent transition-all duration-300 ease-in-out h-full top-0 right-0 left-0 rounded-md group-hover:shadow-nfl-1 overflow-hidden">
             <div class="img-film group-hover:scale-125">
-              <img
-                class="w-full"
+              <img class="w-full"
                 src="https://occ-0-395-58.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLRGfQACM3pZbMmdFsLYScnlRol-T1dGuS99XUlQ_rWLOfUTqN0yePh25hMS1thAZ7f7kUGnUWzsBSZHYlpgjzxovo.webp?r=002"
-                alt=""
-              />
+                alt="" />
             </div>
             <div
-              class="film-info group-hover:h-auto delay-200 px-2 group-hover:py-2 h-0 group-hover:scale-0 transition duration-200 ease-linear bg-nfl overflow-hidden"
-            >
+              class="film-info group-hover:h-auto px-2 group-hover:py-2 h-0 group-hover:scale-0 transition-all duration-300 ease-in-out bg-nfl overflow-hidden">
               <div
-                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
+                class="name-film line-clamp-2 text-sm font-semibold capitalize group-hover:scale-0 overflow-hidden whitespace-nowrap overflow-ellipsis">
                 <a href="#" title="" rel="">Người thầy y đức</a>
               </div>
               <div
-                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3"
-              >
+                class="text-small-11 my-1 group-hover:scale-0 short-note overflow-hidden overflow-ellipsis line-clamp-3">
                 Một bác sĩ phẫu thuật tài năng, kì quái với ba bằng chuyên môn
                 từ bỏ công việc hàng đầu tại Seoul và đến một bệnh viện tỉnh để
                 đào tạo các bác sĩ trẻ.
