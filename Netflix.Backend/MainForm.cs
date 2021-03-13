@@ -23,14 +23,14 @@ namespace Netflix.Backend
                 Title = txtTitle.Text,
                 Synopsis = txtSynipsis.Text,
                 Rating = txtRating.Text,
-                Categories = txtCategories.Text.Split(','),
-                Actors = txtActors.Text.Split(','),
+                Categories = txtCategories.Text.Split(',').Select(x => x.Trim()).ToArray(),
+                Actors = txtActors.Text.Split(',').Select(x => x.Trim()).ToArray(),
                 VerticalThumbnail = txtVerticalThumbnail.Text,
                 HorizontalThumbnail = txtHorizontalThumbnail.Text,
                 SmallThumbnail = txtSmallThumbnail.Text,
                 VideoSource = txtVideoSource.Text,
                 PostSource = txtPostSource.Text,
-                Tags = txtTags.Text.Split(',')
+                Tags = txtTags.Text.Split(',').Select(x => x.Trim()).ToArray()
             };
             var videoService = new VideoService();
             _video = await videoService.CreateAsync(_video);
@@ -79,9 +79,18 @@ namespace Netflix.Backend
                     break;
 
                 case 1:
+                    ReBuildVideos();
                     dataGridView.DataSource = _videos;
                     break;
             }
+        }
+
+        private void ReBuildVideos()
+        {
+            var isExisted = _videos.FirstOrDefault(x => x.Id == _video.Id) != null;
+            if (isExisted) return;
+            _video.Index++;
+            _videos.Add(_video);
         }
     }
 }
