@@ -16,12 +16,41 @@
     .film-info {
       height: auto;
       transform: scale3d(1);
-      padding: 0.5rem;
+      padding: 0.5rem 0.3rem;
     }
 
     .item-position {
       left: 0;
       right: 0;
+    }
+  }
+}
+
+.netflix-film-group {
+  .film-info {
+    transition: ease 0.2s all;
+
+    &:hover {
+      background: linear-gradient(to top, #000000, #00000073) !important;
+      transition: ease 0.2s all;
+    }
+
+    .name-film {
+      text-shadow: 2px 2px 2px #1d1c1c;
+    }
+  }
+}
+
+.background-banner {
+  background: linear-gradient(to top, rgba(0, 0, 0, .8) 10%, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+  .film-item {
+  
+    &:hover {
+      transform: scale3d(1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
     }
   }
 }
