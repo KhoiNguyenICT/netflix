@@ -70,3 +70,120 @@
     }
   }
 }
+
+
+
+
+
+// ==========================
+
+.peliculas-recomendadas {
+  margin-top: 70px;
+}
+
+.peliculas-recomendadas .contenedor-principal {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: -15px;
+}
+
+
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+  position: absolute;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 40px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  top: calc(60% - 25%);
+  line-height: 40px;
+  color: #000;
+  cursor: pointer;
+  z-index: 500;
+  transition: .2s ease all;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+  background: rgba(255, 43, 43, 0.3);
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+  left: 0;
+}
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+  right: 0;
+}
+
+/***************TRABAJANDO CARRUSEL*********/
+.peliculas-recomendadas .contenedor-carrusel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.peliculas-recomendadas .contenedor-carrusel2 {
+  margin-top: -35px;
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
+  min-width: 25%;
+  transition: .3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula.hover {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.contenedor-pie-de-pagina {
+  margin-bottom: 40px;
+  margin-top: -35px;
+  justify-content: center;
+  font-size: 15px;
+  display: flex;
+}
+
+.contenedor-pie-de-pagina a {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0 30px;
+}
+
+.contenedor-pie-de-pagina a:hover {
+  color: rgba(240, 39, 39, 0.945);
+}
+
+
+/*****************RESPONSIVE*******************************/
+@media screen and (max-width: 480px) {
+  .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
+    min-width:50%;
+  }
+  
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
+    min-width:33.3333333%;
+  }
+}

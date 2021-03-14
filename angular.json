@@ -57,7 +57,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/lib/slider-js/main.js"
+            ],
             "customWebpackConfig": {
               "path": "webpack.config.js"
             }
