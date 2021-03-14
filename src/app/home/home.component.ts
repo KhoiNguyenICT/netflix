@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadHeader();
     this.loadFooter();
-    this.videos$ = this.firestoreService.collection("videos").valueChanges();
+    this.videos$ = this.firestoreService.collection("Videos").valueChanges();
   }
 
   async loadHeader() {
