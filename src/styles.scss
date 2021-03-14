@@ -7,11 +7,12 @@
   .item-position {
     left: 1px;
     right: 1px;
+    height: inherit;
   }
 
   &:hover {
-    transform: scale3d(1.25);
-    transform: scale3d(1.25, 1.25, 1.25);
+    transform: scale3d(1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
 
     .film-info {
       height: auto;
@@ -22,12 +23,21 @@
     .item-position {
       left: 0;
       right: 0;
+      height: min-content;
     }
   }
 }
 
 .netflix-film-group {
+  // .list-film {
+  //   overflow-x: auto;
+  // }
+  
   .film-info {
+    .film-item {
+      min-width: 50%;
+    }
+
     transition: ease 0.2s all;
 
     &:hover {
@@ -45,9 +55,15 @@
   background: linear-gradient(to top, rgba(0, 0, 0, .8) 10%, rgba(0, 0, 0, 0));
 }
 
-@media (min-width: 320px) and (max-width: 480px){
+@media (min-width: 320px) and (max-width: 480px) {
+  .netflix-film-group {
+    .film-item {
+      min-width: 50%;
+    } 
+  }
+
   .film-item {
-  
+
     &:hover {
       transform: scale3d(1.1);
       transform: scale3d(1.1, 1.1, 1.1);

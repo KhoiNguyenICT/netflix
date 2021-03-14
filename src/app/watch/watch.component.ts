@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-watch',
   template: `
   <div class="bg-nfl">
-  <div class="flex flex-wrap-reverse h-screen items-end lg:items-center p-3">
-    <div class="w-full lg:w-8/12 h-2/5 lg:h-full lg:max-h-140">
+  <div class="flex flex-wrap-reverse h-screen items-end lg:items-center">
+    <div class="w-full lg:w-8/12 h-3/5 lg:h-full lg:max-h-140">
       <iframe class="w-full h-full" src="https://www.youtube.com/embed/tgbNymZ7vqY">
       </iframe>
     </div>
@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
             alt="" class="w-1/3">
           <button
             class="flex items-center mt-1.5 px-5 py-1 bg-white text-black text-sm rounded-sm mr-3 hover:bg-opacity-80 font-semibold"><span
-              class="mr-2 text-xs"> <i class="fas fa-play"></i></span>
+              class="mr-2 text-xs"> <i class="f as fa-play"></i></span>
             Phát</button>
         </div>
         <div class="name-film bg-nfl-bottom-info-play pl-4 pr-4 pb-4 -ml-4 -mb-4 -mr-4">
