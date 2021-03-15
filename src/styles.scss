@@ -9,35 +9,14 @@
     right: 1px;
     height: inherit;
   }
-
-  // &:hover {
-  //   transform: scale3d(1.15);
-  //   transform: scale3d(1.15, 1.15, 1.15);
-
-  //   .film-info {
-  //     height: auto;
-  //     transform: scale3d(1);
-  //     padding: 0.5rem 0.3rem;
-  //   }
-
-  //   .item-position {
-  //     left: 0;
-  //     right: 0;
-  //     height: min-content;
-  //   }
-  // }
 }
 
 .netflix-film-group {
-  // .list-film {
-  //   overflow-x: auto;
-  // }
+  .film-item {
+    height: 24rem;
+  }
 
   .film-info {
-    .film-item {
-      min-width: 50%;
-    }
-
     transition: ease 0.2s all;
 
     &:hover {
@@ -55,31 +34,54 @@
   background: linear-gradient(to top, rgba(0, 0, 0, .8) 10%, rgba(0, 0, 0, 0));
 }
 
-// @media (min-width: 320px) and (max-width: 480px) {
-//   .netflix-film-group {
-//     .film-item {
-//       min-width: 50%;
-//     } 
-//   }
+.list-film-other {
+  .film-item {
+    width: 16.66666667%;
+    height: 7rem;
+    padding: 0 1px;
+    margin-bottom: 2px;
+    position: relative;
+    z-index: 10;
+    transition: 0.2s ease all;
+    overflow: hidden;
 
-//   .film-item {
+    .item-scale {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.7), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+    }
 
-//     &:hover {
-//       transform: scale3d(1.1);
-//       transform: scale3d(1.1, 1.1, 1.1);
-//     }
-//   }
-// }
+    .film-info {
+      height: 0;
+      overflow: hidden;
+      padding: 0;
+      transition: 0.2s ease all;
+    }
 
 
+    &:hover {
+      transform: scale(1.15);
+      z-index: 20;
+      transition: 0.2s ease all;
+      overflow: visible;
 
+      .film-info {
+        height: min-content;
+        padding: 8px 4px 4px 4px;
+        transition: 0.2s ease all;
 
+        .name-film,
+        .short-note,
+        .category-film,
+        .show-more {
+          transform: scale(1);
+          transition: 0.2s ease all;
+        }
+      }
+    }
+  }
+}
 
 // ==========================
-
-.peliculas-recomendadas {
-  // margin-top: 70px;
-}
 
 .peliculas-recomendadas .contenedor-principal {
   display: flex;
@@ -123,9 +125,10 @@
 /***************TRABAJANDO CARRUSEL*********/
 .peliculas-recomendadas .contenedor-carrusel {
   width: 100%;
-  padding: 36px 0;
+  padding: 44px 0;
   overflow: hidden;
   scroll-behavior: smooth;
+  margin-top: -26px;
 }
 
 .peliculas-recomendadas .contenedor-carrusel2 {
@@ -144,21 +147,30 @@
 }
 
 .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
+  &.hover {
+    transition-delay: 0.3s;
+    transform: scale(1.15);
+    transform-origin: center;
+    transition: .2s ease all;
+    z-index: 4;
+  }
+
   &:first-child {
     &.hover {
       transform-origin: left;
+      transform: scale(1.15);
+      transition: .2s ease all;
+
     }
   }
 
   &:last-child {
     &.hover {
       transform-origin: right;
-    }
-  }
+      transform: scale(1.15);
+      transition: .2s ease all;
 
-  &.hover {
-    transform: scale(1.15);
-    transform-origin: center;
+    }
   }
 }
 
@@ -193,10 +205,37 @@
     min-width: 50%;
   }
 
+  .netflix-film-group .film-item {
+    height: 20rem;
+  }
+
+  .peliculas-recomendadas .contenedor-carrusel {
+    padding: 25px 0;
+    margin-top: -14px;
+  }
+
+  .list-film-other .film-item {
+    width: 50%;
+    height: 6rem;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
     min-width: 33.3333333%;
+  }
+
+  .netflix-film-group .film-item {
+    height: 24rem;
+  }
+
+  .peliculas-recomendadas .contenedor-carrusel {
+    padding: 25px 0;
+    margin-top: -14px;
+  }
+
+  .list-film-other .film-item {
+    height: 6rem;
+    width: 33.33333333%;
   }
 }
