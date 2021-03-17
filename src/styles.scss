@@ -14,10 +14,21 @@
 .netflix-film-group {
   .film-item {
     height: 24rem;
+
+    &:hover {
+      .film-info {
+        transition: ease 0.2s all;
+        transition-delay: 0.3s;
+        opacity: 1;
+        z-index: 3;
+      }
+    }
   }
 
   .film-info {
     transition: ease 0.2s all;
+    opacity: 0;
+    z-index: -1;
 
     &:hover {
       background: linear-gradient(to top, #000000, #00000073) !important;
@@ -28,6 +39,7 @@
       text-shadow: 2px 2px 2px #1d1c1c;
     }
   }
+
 }
 
 .background-banner {
@@ -81,7 +93,7 @@
   }
 }
 
-// ==========================
+// ========= style slider =======================
 
 .peliculas-recomendadas .contenedor-principal {
   display: flex;
@@ -147,29 +159,29 @@
 }
 
 .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
-  &.hover {
-    transition-delay: 0.3s;
+  &:hover {
     transform: scale(1.15);
     transform-origin: center;
     transition: .2s ease all;
+    transition-delay: 0.3s;
     z-index: 4;
   }
 
   &:first-child {
-    &.hover {
-      transform-origin: left;
-      transform: scale(1.15);
+    &:hover {
+      // transform-origin: left;
+      transform: scale(1.15, 1.15) translateX(12px);
       transition: .2s ease all;
-
+      transition-delay: 0.3s;
     }
   }
 
   &:last-child {
-    &.hover {
-      transform-origin: right;
-      transform: scale(1.15);
+    &:hover {
+      // transform-origin: right;
+      transform: scale(1.15, 1.15) translateX(-12px);
       transition: .2s ease all;
-
+      transition-delay: 0.3s;
     }
   }
 }
@@ -237,5 +249,22 @@
   .list-film-other .film-item {
     height: 6rem;
     width: 33.33333333%;
+  }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+  .netflix-film-group .film-item {
+    height: 13rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
+    min-width: 14.2857142857%;
+  }
+}
+
+@media (min-width: 2400px) {
+  .peliculas-recomendadas .contenedor-carrusel .carrusel .pelicula {
+    min-width: 10%;
   }
 }
